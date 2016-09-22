@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteBase /
+# Is the request for a non-existent file?
+RewriteCond "%{REQUEST_FILENAME}" "!-f"
+RewriteCond "%{REQUEST_FILENAME}" "!-d"
+#RewriteRule    ^/user$    index.php?page=user    [L]
+#RewriteRule    ^/drug$    index.php?page=drug    [L]
+#RewriteRule    ^/patient$    index.php?page=patient    [L]
+#RewriteRule    ^/patient_drug$    index.php?page=patient_drug    [L]
+#RewriteRule ^/([^\.]+) index.php?page=$1
+
+#RewriteEngine On
+#RewriteCond %{REQUEST_URI} !index\.php [NC]
+RewriteRule ^([^/]+)(.*)?$ index.php?page=$1   [L]
+#RewriteRule ^([^/d]+)/?$ drug_manager/index.php?page=$1 [QSA]
